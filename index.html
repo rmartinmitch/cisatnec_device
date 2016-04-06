@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8" />
+<title>PhoneGap Device API</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="css/jquery.mobile.min.css">
+
+<script src="cordova.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.mobile.min.js"></script>
+
+<script type="text/javascript" charset="utf-8">
+
+    // Wait for device API libraries to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // device APIs are available
+    //
+    function onDeviceReady() {
+        var element = document.getElementById('deviceProperties');
+        element.innerHTML = 'Device Model: '    + device.model    + '<br />' +
+                            'Cordova Ver: '  + device.cordova  + '<br />' +
+                            'Platform: ' + device.platform + '<br />' +
+                            'Device UUID: '     + device.uuid     + '<br />' +
+                            'Device Version: '  + device.version  + '<br />';
+    }
+
+    </script>
+
+<style type="text/css">
+<!--
+img.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 35px;
+}
+#deviceProperties {
+	font-size: medium;
+	font-weight: bold;
+}
+
+
+-->
+</style>
+
+
+</head>
+
+<body>
+
+<div data-role="page" data-theme="a">
+
+
+  <div data-role="header" data-fullscreen="true">
+    <h1>Device API</h1>
+  </div>
+
+  <div data-role=content>
+  
+	<div id="deviceProperties">Loading device properties...</div>
+    
+    <div>
+      	<img src="images/mobile.jpg" alt="mobile" width="339" height="321" class="center">
+    </div>
+  	
+  </div>
+
+  <div data-role="footer" data-position="fixed" data-fullscreen="true">
+    <h4>Rick Mitchell</h4>
+  </div>
+
+</div>
+
+</body>
+</html>
